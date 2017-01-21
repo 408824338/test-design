@@ -9,10 +9,9 @@
 namespace IMooc;
 
 
-
 class Database
 {
-    private $private = 'PDO';   // 调用的方式有 MySQL MySQLi  PDO
+    private static $private = 'PDO';   // 调用的方式有 MySQL MySQLi  PDO
 
     protected static $db;
 
@@ -25,25 +24,24 @@ class Database
         if (self::$db) {
             return self::$db;
         } else {
+            switch (self::$private) {
+                case 'MySQL';
+                    self::$db = new IMooc\Database\MySQL();
+                    return self::$db;
+                    break;
 
-            self::$db =  new IMooc\Database\PDO();
-            return self::$db;
+                case 'MySQLi';
+                    self::$db = new IMooc\Database\MySQLi();
+                    return self::$db;
+                    break;
+                case 'PDO';
+                    self::$db = new Database\PDO();
+                    self::$db ->connect('127.0.0.1','root','123456','test');
+                   return self::$db;
+                    break;
+            }
         }
 
     }
 
-    function where($where)
-    {
-        return $this;
-    }
-
-    function order($order)
-    {
-        return $this;
-    }
-
-    function limit($limit)
-    {
-        return $this;
-    }
 }

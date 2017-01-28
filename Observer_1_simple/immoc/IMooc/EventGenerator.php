@@ -27,6 +27,7 @@ abstract class EventGenerator {
 
     /** 通知
      * @author cmk
+     *
      */
     public function notify() {
         foreach ($this->observers as $observer){

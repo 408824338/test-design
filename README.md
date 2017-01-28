@@ -7,3 +7,5 @@
 /strategy_1_simple     #策略模式
 
 /mapping_1_simple     #映射模式   该例子 包括 工厂模式+注册模式
+
+/Observer_1_simple    #观察者模式

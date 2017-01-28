@@ -13,9 +13,9 @@ class Register
 {
     protected static $objects;
     static function set($alias,$object){
-        var_dump($object);
+//        var_dump($object);
         self::$objects[$alias]  = $object;
-        var_dump(self::$objects);
+//        var_dump(self::$objects);
     }
 
     static function get($name){

@@ -13,3 +13,5 @@
 /clone_1_simple       #原型模式
 
 /decorator_1_simple   #装饰者模式
+
+/iterator_1_simple    #迭代器模式

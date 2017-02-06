@@ -34,25 +34,25 @@ class Database {
     */
 
 
-    static function getInstance() {
+    static function getInstance($conf) {
         if (self::$db) {
             return self::$db;
         } else {
             switch (self::$private) {
                 case 'MySQL';
                     self::$db = new Database\MySQL();
-                    self::$db->connect('127.0.0.1', 'root', '123456', 'test');
+                    self::$db =self::$db->connect($conf['host'], $conf['user'], $conf['password'],$conf['dbname']);
                     return self::$db;
                     break;
 
                 case 'MySQLi';
                     self::$db = new Database\MySQLi();
-                    self::$db->connect('127.0.0.1', 'root', '123456', 'test');
+                    self::$db =self::$db->connect($conf['host'], $conf['user'], $conf['password'],$conf['dbname']);
                     return self::$db;
                     break;
                 case 'PDO';
                     self::$db = new Database\PDO();
-                    self::$db =self::$db->connect('127.0.0.1', 'root', '123456', 'test');
+                    self::$db =self::$db->connect($conf['host'], $conf['user'], $conf['password'],$conf['dbname']);
                     return self::$db;
                     break;
             }

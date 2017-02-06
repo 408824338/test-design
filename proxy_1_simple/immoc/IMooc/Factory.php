@@ -31,6 +31,19 @@ class Factory {
      * @return $db
      */
     static function getDatabase($id = 'master') {
-        return Database::getInstance();
+        $key = 'database_' . $id;
+        if ($id == 'slave') {
+            $slaves = Application::getInstance()->config['database']['slave'];
+            $db_conf = $slaves[array_rand($slaves)];
+        } else {
+            $db_conf = Application::getInstance()->config['database']['master'];
+        }
+        $db = Register::get($key);
+        if (!$db) {
+            $db = Database::getInstance($db_conf);
+            Register::set($key, $db);
+        }
+
+        return $db;
     }
 }

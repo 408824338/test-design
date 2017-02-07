@@ -25,6 +25,21 @@ DocumentRoot D:\web&database_backup\test\design\Observer_2_function_add\immoc
 ```
 
 实现过程:通过绑定一个控制器下的方法来!
+
+###配置文件
+路径 Observer_2_function_add/immoc/configs/model.php
+```
+    $config = [
+        'user' => [
+            'observer' => [
+                'App\Observer\UserAdd1',
+                'App\Observer\UserAdd2',
+                'App\Observer\UserAdd3',
+                //'App\Observer\UserAdd4',
+            ]
+        ]
+    ];
+```
 ###调用的代码
 路径 Observer_2_function_add/immoc/App/Controller/Home.php
 ```

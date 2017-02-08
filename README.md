@@ -8,17 +8,17 @@
 
 /mapping_1_simple     #映射模式   该例子 包括 工厂模式+注册模式
 
-/Observer_1_simple    #观察者模式
+/Observer_1_simple    #观察者模式<br/>
 /Observer_2_function_add    #观察者模式 例子模块化(通过配置来控制),如新员工加入 1,分配工位 2.分配电脑 3.其它逻辑 (等于独立的线程,可以开关,添加/删除,自由组)
 
 /clone_1_simple       #原型模式
 
-/decorator_1_simple   #装饰者模式
+/decorator_1_simple   #装饰者模式<br/>
 /decorator_2_template_json   #装饰模式 template与json的切换  http://127.0.0.1:83/home/index?app=html或json
 
 /iterator_1_simple    #迭代器模式
 
-/proxy_1_simple      #代理模式   添加数据库主从选择读取与更
+/proxy_1_simple      #代理模式   添加数据库主从选择读取与更新 <br />
 /proxy_2_db      #代理模式   连接数据库时使用代理,选择主从时,不必再传参数 ,根据select来判断是读主库还是从库
 
 

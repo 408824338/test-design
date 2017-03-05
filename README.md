@@ -21,4 +21,30 @@
 /proxy_1_simple      #代理模式   添加数据库主从选择读取与更新 <br />
 /proxy_2_db      #代理模式   连接数据库时使用代理,选择主从时,不必再传参数 ,根据select来判断是读主库还是从库
 
+/di                 #依赖注入容器(dependency injection container)
+/di/di_1_simple.php             #原始方法 一个类依赖另外一个类,在每个类里实例化
+/di/di_2_zb.php                 # 定义的类里，要依赖的类，定义变量保存，在外面new()的时候带进来
+/di/di_3_container.php          #对di_2_zb.php加入容器(Container)来表示 
+/di/di_4_update.php             # 上例升级的解析
+/di/di_5_final.php`             #自动绑定（自动解析）高级
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
